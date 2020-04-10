@@ -2,6 +2,7 @@ package com.aop.SpringBootAOP;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -12,9 +13,9 @@ public class StudentService {
 		return Arrays.asList(new Student("100","Juju","8"),new Student("200","Papu","26"),new Student("300","saba","38") );
 	}
 	
-	public Student getStudentById(String id) {
+	public Optional<Student> getStudentById(String id) {
 		return Arrays.asList(new Student("100","Juju","8"),new Student("200","Papu","26"),new Student("300","saba","38") )
-				.stream().filter(student -> student.getId().equals(id)).findFirst().get();	
+				.stream().filter(student -> student.getId().equals(id)).findFirst();	
 			
 	}
 	
